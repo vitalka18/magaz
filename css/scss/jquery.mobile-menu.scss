@@ -1,0 +1,267 @@
+/************************
+*************************
+    Mobile Menu v1.0
+    (c) 2015 Magik Commerce
+ ************************
+************************/
+@import 'config';
+
+html {
+  overflow-x: hidden;
+}
+
+#page {
+  position: relative;
+  left: 0;
+}
+
+.mmPushBody {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 0;
+  background: $mobile-menu-bg;
+  z-index: 99999;
+  -webkit-box-shadow: 0 1px 8px #555555;
+  -moz-box-shadow: 0 1px 8px #555555;
+  -o-box-shadow: 0 1px 8px #555555;
+  box-shadow: 0 1px 8px #555555;
+  display: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  border-right: 1px solid #cccccc;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+  line-height: 1.42857;
+  text-transform: uppercase;
+}
+
+.mobile-menu {
+  list-style-type: none;
+  margin: 0;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  padding-left: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+    .expand {
+      background: #eeeeee;
+    }
+  }
+  .mm-search {
+    height: 60px;
+    background-color: $mobile-menu-bg;
+    color: #555555;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+  .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    .form-control {
+      &:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+      display: table-cell;
+      position: relative;
+      z-index: 2;
+      float: left;
+      width: 100%;
+      margin-bottom: 0px;
+      height: 36px;
+    }
+  }
+  .input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+    &:first-child > .btn {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    > .btn {
+      position: relative;
+      height: 36px;
+    }
+  }
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    font-size: 15px;
+    line-height: 1.42857;
+    border-radius: 0px;
+  }
+  .form-control {
+    height: 18px;
+    padding: 6px 0;
+    font-size: 15px;
+    color: #555555;
+    background-color: #FFF;
+    border-radius: 0px;
+    border: 0;
+  }
+  .btn-default {
+    height: 30px;
+    border: 0;
+    padding: 4px 5px;
+    background-color: white;
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.mm-search #search {
+  width: 200px;
+}
+
+.mobile-menu {
+  .btn-default {
+    &:focus, &:active {
+      background-color: white;
+    }
+  }
+  .home {
+    background-color: $link-hover-color;
+    color: white;
+    height: 43px;
+    overflow: hidden;
+    i {
+      padding-right: 5px;
+    }
+    a.active {
+      color: #fff !important;
+    }
+  }
+  .expand {
+    right: 0;
+    position: absolute;
+    border-left: 1px solid #ddd;
+    padding: 0 10px;
+    color: $link-hover-color;
+    margin-left: 100px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  li {
+    display: block;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+    .home a {
+      color: #fff;
+    }
+    a {
+      display: block;
+      overflow: hidden;
+      white-space: normal;
+      color: #222222;
+      text-decoration: none;
+      padding: 10px;
+      padding-left: 15px;
+      &.active {
+        color: $link-hover-color;
+      }
+    }
+    li {
+      background: #eeeeee;
+      a {
+        padding-left: 25px;
+      }
+      li {
+        background: #dddddd;
+        a {
+          padding-left: 35px;
+        }
+      }
+    }
+  }
+  .social {
+    a {
+      float: left;
+      padding: 0;
+      margin: 10px 0 10px 15px;
+    }
+    i {
+      font-size: 22px;
+      color: $link-hover-color;
+    }
+  }
+  input.simple:focus {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.mm-toggle-wrap {
+  color: white;
+  background: $link-hover-color;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.mm-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+  padding: 8px 10px;
+  width: auto;
+  float: left;
+  background: $link-hover-color;
+  height: 40px;
+}
+
+@media (max-width: 767px) {
+  .mm-toggle {
+    display: block;
+    .mm-label {
+      margin-left: 3px;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .mm-toggle .mm-label {
+    display: none;
+  }
+}
